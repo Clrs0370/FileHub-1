@@ -1,0 +1,19 @@
+﻿@using FileHub.Models
+@{
+    ViewBag.Title = "视频";
+    var files = ViewBag.Files as List<MyFile>;
+}
+
+<h2>视频</h2>
+@if (files != null)
+{
+    <ul>
+        @foreach (var file in files)
+        {
+          <li>@Html.ActionLink(file.FileName, "VideoPlay", file)</li> 
+        }
+    </ul>
+}
+
+
+

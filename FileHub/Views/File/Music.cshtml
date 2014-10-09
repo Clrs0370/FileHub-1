@@ -1,0 +1,18 @@
+﻿@using FileHub.Models
+@{
+    ViewBag.Title = "音乐";
+    var files = ViewBag.Files as List<MyFile>;
+}
+
+<h2>Music</h2>
+
+@if (files != null)
+{ 
+    <audio autoplay="" controls="controls" id="audio_play" preload="preload">
+        @foreach (var file in files)
+        {
+            <source src="@file.FileUrl" type="audio/mpeg">
+        }
+
+    </audio> 
+}
